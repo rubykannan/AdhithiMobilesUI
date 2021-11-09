@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="toolbar">#FFA7B4</color>
     <color name="itemDescription">#999999</color>
+    <color name="divider">#aeaeb4</color>
 </resources>
