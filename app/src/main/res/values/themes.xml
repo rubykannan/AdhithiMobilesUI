@@ -24,6 +24,23 @@
 
     <style name="Theme.AdhithiMobiles.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="homeAfterCollapse">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowRadius">15</item>
+        <item name="android:shadowColor">@android:color/black</item>
+    </style>
+
+    <style name="homeBeforeCollapse">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowRadius">15</item>
+        <item name="android:shadowColor">@android:color/black</item>
+    </style>
+
     <style name="Theme.AdhithiMobiles.navTheme">
         <!-- Color of text and icon when SELECTED -->
         <item name="colorPrimary">#FF8E9C</item>

@@ -1,20 +1,22 @@
 package com.adhithi.adhithimobiles.ui.home
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.adhithi.adhithimobiles.R
 import com.adhithi.adhithimobiles.databinding.FragmentHomeBinding
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.CollapsingToolbarLayout
+
 
 class HomeFragment : Fragment() {
 
@@ -53,6 +55,18 @@ class HomeFragment : Fragment() {
         homeViewModel.homeDataList.observe(this, {dataList ->
             HomeAdapter.dataList = dataList
         })
+        val mToolbar: Toolbar = fragmentHomeView.findViewById(R.id.home_toolbar) as Toolbar
+        var activity = getActivity() as AppCompatActivity
+        activity.setSupportActionBar(mToolbar)
+        val homeCollapsibleToolbar = fragmentHomeView.findViewById(R.id.home_collapsible_toolbar) as CollapsingToolbarLayout
+        homeCollapsibleToolbar.title = "Whats new, Lets Explore"
+        homeCollapsibleToolbar.setExpandedTitleColor(R.color.purple_700)
+        homeCollapsibleToolbar.titleCollapseMode = CollapsingToolbarLayout.TITLE_COLLAPSE_MODE_SCALE
+        homeCollapsibleToolbar.setExpandedTitleTextAppearance(R.style.homeBeforeCollapse)
+        homeCollapsibleToolbar.setCollapsedTitleTextAppearance(R.style.homeAfterCollapse)
+        homeCollapsibleToolbar.setContentScrimColor(238236236);
+
+
         return fragmentHomeView
     }
 
